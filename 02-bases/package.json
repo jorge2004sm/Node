@@ -1,0 +1,29 @@
+{
+  "name": "02-bases",
+  "version": "0.0.1",
+  "description": "Esta es mi primera app real de node",
+  "homepage": "https://github.com/jorge2004sm/Node#readme",
+  "bugs": {
+    "url": "https://github.com/jorge2004sm/Node/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorge2004sm/Node.git"
+  },
+  "license": "ISC",
+  "author": "Jorge Sanchez",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "get-age": "^1.0.1",
+    "uuid": "^13.0.0"
+  }
+}
