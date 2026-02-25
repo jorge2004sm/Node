@@ -1,10 +1,18 @@
 /* const {emailTemplate} = require('./js-foundation/01-template')
 
-
 require('./js-foundation/02-destructuring') */
 
+const {getAge, getUUID} = require('./plugins')
 
-const { getUserById } = require('./js-foundation/05-factory')
+/* const { getUserById } = require('./js-foundation/05-factory')
+ */
+
+
+const getPokemonById = require('./js-foundation/06-promises')
+
+getPokemonById(2)
+.then((pokemon) => console.log({pokemon}))
+.catch((err) => console.log({err}))
 
 /* const id = 1
 
