@@ -1,4 +1,4 @@
-/* const { getAge, getUUID } = require('./plugins')
+/* 
 
  const {emailTemplate} = require('./js-foundation/01-template')
 
@@ -29,3 +29,8 @@ getUserById(id, (error, user) => {
     console.log({user})
 }) */
 
+import { buildLogger } from "./plugins/logger.plugin";
+
+const logger = buildLogger('app.js')
+logger.log('Hola mundo')
+logger.error('Esto es algo malo')
