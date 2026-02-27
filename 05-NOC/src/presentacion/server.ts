@@ -1,18 +1,18 @@
-import { CronJob } from 'cron'
+import { CheckService } from '../domain/use-cases/check-service';
+import { CronService } from './cron/cron-service'; // Ajusta la ruta
 
 export class Server {
     public static start() {
-        console.log('Server started...')
+        console.log('Servidor iniciado...');
 
+        // Creamos una tarea que salude cada 3 segundos
+        CronService.createJob('*/3 * * * * *', () => {
+/*             new CheckService().execute('https://google.com')
+ */            new CheckService(
+    () => console.log('success'),
+    (error) => console.log(error)
+ ).execute('http://localhost:3000')
 
-        const job = new CronJob(
-            '* * * * * *', // cronTime
-            function () {
-                console.log('You will see this message every second');
-            }, // onTick
-            null, // onComplete
-            true, // start
-            'America/Los_Angeles' // timeZone
-        );
+        });
     }
 }
