@@ -11,12 +11,15 @@
     // File Layout
     "rootDir": "src",
     "outDir": "dist/",
+    "lib": ["ES6"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
     "target": "esnext",
-    "types": [],
+    "types": ["node"],
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -48,4 +51,6 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
   }
+
+  
 }
