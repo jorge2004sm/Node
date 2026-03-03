@@ -22,7 +22,7 @@ export class Server {
     // console.log(envs.MAILER_SECRET_KEY, envs.MAILER_EMAIL)
 
     // Mandar email
-    const emailService = new EmailService()
+/*     const emailService = new EmailService()
     emailService.sendEmail({
       to: 'jorgesanchezmarin04@gmail.com',
       subject: 'Hola prueba',
@@ -30,22 +30,20 @@ export class Server {
         <h3>Hola Jorge programa Gmail Mailer</h3>
         
       `
-    })
+    }) */
 
     
-    // CronService.createJob(
-    //   '*/5 * * * * *',
-    //   () => {
-    //     const url = 'https://google.com';
-    //     new CheckService(
-    //       fileSystemLogRepository,
-    //       () => console.log( `${ url } is ok` ),
-    //       ( error ) => console.log( error ),
-    //     ).execute( url );
-    //     // new CheckService().execute( 'http://localhost:3000' );
-        
-    //   }
-    // );
+    CronService.createJob(
+     '*/5 * * * * *',
+     () => {
+       const url = 'https://google.com';
+       new CheckService(
+         fileSystemLogRepository,
+         () => console.log( `${ url } is ok` ),
+         ( error ) => console.log( error ),
+       ).execute( url );        
+     }
+    );
 
 
   }
